@@ -1,10 +1,11 @@
 const express =require("express")
 const rp = require("request-promise") 
 const config = require("config") 
+const { connect } = require("mongoose")
 const app = express()
 
 app.use(express.json({extended:true}))
-app.use("/api/contact", require("./routes/contact"))
+app.use("/api", require("./routes/contact"))
 
 const start =async ()=>{
   try {
